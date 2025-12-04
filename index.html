@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nada Bramha | Sydney Bhajan Mandali</title>
+    <meta name="description" content="Nada Bramha - Sydney Bhajan Mandali. Devotion through music. Book us for spiritual events." />
+    
+    <!-- Tailwind CSS (via CDN for static hosting) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Tailwind Config -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              heading: ['"Cinzel Decorative"', 'cursive'],
+              subheading: ['"Playfair Display"', 'serif'],
+              body: ['"Lato"', 'sans-serif'],
+            },
+            colors: {
+              saffron: {
+                50: '#fff5e6',
+                100: '#ffebcc',
+                200: '#ffd699',
+                300: '#ffc266',
+                400: '#ffad33',
+                500: '#ff9900',
+                600: '#cc7a00',
+                700: '#995c00',
+                800: '#663d00',
+                900: '#331f00',
+              },
+              maroon: {
+                500: '#800000',
+                600: '#600000',
+                700: '#4a0000',
+              },
+              gold: {
+                400: '#FFD700',
+                500: '#DAA520',
+              }
+            }
+          }
+        }
+      }
+    </script>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0"
+  }
+}
+</script>
+</head>
+<body class="bg-stone-50 text-stone-800 antialiased">
+
+    <!-- Header -->
+    <header class="fixed w-full z-50 transition-all duration-300 bg-stone-50/90 backdrop-blur-sm border-b border-orange-100 shadow-sm" id="main-header">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                
+                <!-- Logo -->
+                <a href="#home" class="flex items-center gap-2 group">
+                    <span class="text-maroon-600 font-heading font-bold text-2xl md:text-3xl tracking-wide group-hover:text-saffron-600 transition-colors">
+                        Nada Bramha
+                    </span>
+                </a>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden md:flex space-x-8 items-center">
+                    <a href="#home" class="text-stone-600 hover:text-maroon-600 font-subheading text-lg font-medium transition-colors">Home</a>
+                    <a href="#about" class="text-stone-600 hover:text-maroon-600 font-subheading text-lg font-medium transition-colors">About Us</a>
+                    <a href="#events" class="text-stone-600 hover:text-maroon-600 font-subheading text-lg font-medium transition-colors">Upcoming Events</a>
+                    <a href="#contact" class="text-stone-600 hover:text-maroon-600 font-subheading text-lg font-medium transition-colors">Contact</a>
+                    
+                    <button id="audio-toggle-desktop" class="flex items-center gap-2 px-4 py-2 rounded-full border bg-stone-100 border-stone-200 text-stone-500 transition-all duration-500 hover:bg-saffron-50">
+                        <svg id="audio-icon-desktop" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><path d="M2 12h20"/></svg>
+                        <span id="audio-text-desktop" class="text-sm font-body font-semibold">Sound Off</span>
+                    </button>
+                </nav>
+
+                <!-- Mobile Menu Button & Sound -->
+                <div class="md:hidden flex items-center gap-2">
+                    <button id="audio-toggle-mobile" class="p-2 rounded-full text-stone-400 bg-stone-100 border border-stone-200">
+                        <svg id="audio-icon-mobile" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><path d="M2 12h20"/></svg>
+                    </button>
+                    <button id="menu-toggle" class="text-stone-700 hover:text-maroon-600 focus:outline-none p-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Nav Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-stone-100 shadow-lg">
+            <div class="px-4 pt-2 pb-6 space-y-1 flex flex-col items-center">
+                <a href="#home" class="mobile-link block px-3 py-4 text-base font-subheading font-medium text-stone-700 hover:bg-saffron-50 hover:text-maroon-600 w-full text-center">Home</a>
+                <a href="#about" class="mobile-link block px-3 py-4 text-base font-subheading font-medium text-stone-700 hover:bg-saffron-50 hover:text-maroon-600 w-full text-center">About Us</a>
+                <a href="#events" class="mobile-link block px-3 py-4 text-base font-subheading font-medium text-stone-700 hover:bg-saffron-50 hover:text-maroon-600 w-full text-center">Upcoming Events</a>
+                <a href="#contact" class="mobile-link block px-3 py-4 text-base font-subheading font-medium text-stone-700 hover:bg-saffron-50 hover:text-maroon-600 w-full text-center">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden bg-gradient-to-b from-stone-50 to-saffron-50">
+            <!-- Canvas for Smoke -->
+            <canvas id="smoke-canvas" class="absolute top-0 left-0 w-full h-full pointer-events-none z-0 opacity-60"></canvas>
+            
+            <!-- Decorative Background Circle -->
+            <div class="absolute w-[600px] h-[600px] rounded-full border-[40px] border-saffron-100 opacity-20 pulse-slow pointer-events-none blur-3xl"></div>
+
+            <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+                <div class="flex justify-center mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="text-maroon-500 opacity-80"><path d="M12 7.5a4.5 4.5 0 1 1 4.5 4.5M12 7.5A4.5 4.5 0 1 0 7.5 12M12 7.5V9m-4.5 3a4.5 4.5 0 1 1 4.5 4.5M7.5 12H9m3 4.5a4.5 4.5 0 1 1 4.5-4.5M12 16.5V15m4.5-3a4.5 4.5 0 1 1-4.5-4.5M16.5 12H15"/></svg>
+                </div>
+                
+                <h1 class="font-heading text-5xl md:text-7xl lg:text-8xl text-transparent bg-clip-text bg-gradient-to-r from-maroon-600 to-saffron-600 mb-6 drop-shadow-sm pb-2">
+                    Nada Bramha
+                </h1>
+                
+                <p class="font-subheading text-xl md:text-3xl text-stone-600 mb-8 italic">
+                    Sydney Bhajan Mandali – Devotion Through Music
+                </p>
+
+                <div class="max-w-2xl mx-auto mb-12">
+                    <p class="font-body text-stone-500 text-lg leading-relaxed">
+                        We are a passionate bhajan mandali keeping the centuries-old tradition of devotional music alive. 
+                        Join us to experience the divine connection through sound.
+                    </p>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="mailto:contact@nadabramha.sydney?subject=Booking Inquiry" class="px-8 py-4 bg-maroon-600 text-white font-body font-bold rounded-full shadow-lg hover:bg-maroon-500 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 uppercase tracking-widest text-sm">
+                        Book Us for an Event
+                    </a>
+                    <a href="#events" class="px-8 py-4 bg-white text-maroon-600 border border-maroon-100 font-body font-bold rounded-full shadow-sm hover:bg-saffron-50 hover:shadow-md transition-all duration-300 uppercase tracking-widest text-sm">
+                        View Upcoming Events
+                    </a>
+                </div>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce opacity-50">
+                <svg class="w-6 h-6 text-maroon-800" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                    <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-24 bg-white relative">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Intro -->
+                <div class="text-center max-w-3xl mx-auto mb-20">
+                    <h2 class="font-heading text-4xl md:text-5xl text-maroon-600 mb-6">Our Journey</h2>
+                    <div class="w-24 h-1 bg-saffron-400 mx-auto mb-8 rounded-full"></div>
+                    <p class="font-body text-lg text-stone-600 leading-relaxed mb-6">
+                        Nada Bramha means "The World is Sound". We believe that music is the easiest path to reach the divine.
+                        Established in Sydney, our group brings together individuals from diverse backgrounds united by a love for 
+                        Bhajans, Abhangs, and Kirtans.
+                    </p>
+                    <p class="font-body text-lg text-stone-600 leading-relaxed">
+                        Our mission is to create an atmosphere of peace and spiritual tranquility wherever we perform. 
+                        We invite you to close your eyes, listen to the rhythm of the manjira, the melody of the harmonium, 
+                        and find the silence within the sound.
+                    </p>
+                </div>
+
+                <!-- Team Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+                    <!-- Member 1 -->
+                    <div class="flex flex-col items-center text-center group">
+                        <div class="relative w-48 h-48 mb-6">
+                            <div class="absolute inset-0 rounded-full border-2 border-saffron-200 transform rotate-45 group-hover:rotate-90 transition-transform duration-700"></div>
+                            <img src="https://picsum.photos/300/300?random=1" alt="Ravi Kumar" class="w-full h-full object-cover rounded-full border-4 border-white shadow-lg group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <h3 class="font-subheading text-2xl text-stone-800 mb-1">Ravi Kumar</h3>
+                        <p class="font-body text-sm font-bold text-saffron-600 uppercase tracking-wider mb-3">Lead Vocalist</p>
+                        <p class="font-body text-stone-500 text-sm italic opacity-80">Specializing in Abhangs and traditional Namasankeertanam.</p>
+                    </div>
+
+                    <!-- Member 2 -->
+                    <div class="flex flex-col items-center text-center group">
+                        <div class="relative w-48 h-48 mb-6">
+                            <div class="absolute inset-0 rounded-full border-2 border-saffron-200 transform rotate-45 group-hover:rotate-90 transition-transform duration-700"></div>
+                            <img src="https://picsum.photos/300/300?random=2" alt="Priya Sharma" class="w-full h-full object-cover rounded-full border-4 border-white shadow-lg group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <h3 class="font-subheading text-2xl text-stone-800 mb-1">Priya Sharma</h3>
+                        <p class="font-body text-sm font-bold text-saffron-600 uppercase tracking-wider mb-3">Harmonium & Vocals</p>
+                        <p class="font-body text-stone-500 text-sm italic opacity-80">Bringing soulful melodies that connect the heart to the divine.</p>
+                    </div>
+
+                    <!-- Member 3 -->
+                    <div class="flex flex-col items-center text-center group">
+                        <div class="relative w-48 h-48 mb-6">
+                            <div class="absolute inset-0 rounded-full border-2 border-saffron-200 transform rotate-45 group-hover:rotate-90 transition-transform duration-700"></div>
+                            <img src="https://picsum.photos/300/300?random=3" alt="Amit Patel" class="w-full h-full object-cover rounded-full border-4 border-white shadow-lg group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <h3 class="font-subheading text-2xl text-stone-800 mb-1">Amit Patel</h3>
+                        <p class="font-body text-sm font-bold text-saffron-600 uppercase tracking-wider mb-3">Tabla / Mridangam</p>
+                        <p class="font-body text-stone-500 text-sm italic opacity-80">Providing the rhythmic foundation for our spiritual journey.</p>
+                    </div>
+
+                    <!-- Member 4 -->
+                    <div class="flex flex-col items-center text-center group">
+                        <div class="relative w-48 h-48 mb-6">
+                            <div class="absolute inset-0 rounded-full border-2 border-saffron-200 transform rotate-45 group-hover:rotate-90 transition-transform duration-700"></div>
+                            <img src="https://picsum.photos/300/300?random=4" alt="Suresh Gupta" class="w-full h-full object-cover rounded-full border-4 border-white shadow-lg group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <h3 class="font-subheading text-2xl text-stone-800 mb-1">Suresh Gupta</h3>
+                        <p class="font-body text-sm font-bold text-saffron-600 uppercase tracking-wider mb-3">Manjira & Chorus</p>
+                        <p class="font-body text-stone-500 text-sm italic opacity-80">Keeping the tala and energy alive in every performance.</p>
+                    </div>
+
+                    <!-- Member 5 -->
+                    <div class="flex flex-col items-center text-center group">
+                        <div class="relative w-48 h-48 mb-6">
+                            <div class="absolute inset-0 rounded-full border-2 border-saffron-200 transform rotate-45 group-hover:rotate-90 transition-transform duration-700"></div>
+                            <img src="https://picsum.photos/300/300?random=5" alt="Meera Reddy" class="w-full h-full object-cover rounded-full border-4 border-white shadow-lg group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <h3 class="font-subheading text-2xl text-stone-800 mb-1">Meera Reddy</h3>
+                        <p class="font-body text-sm font-bold text-saffron-600 uppercase tracking-wider mb-3">Violin Accompanist</p>
+                        <p class="font-body text-stone-500 text-sm italic opacity-80">Weaving soulful ragas into the fabric of our bhajans.</p>
+                    </div>
+
+                    <!-- Member 6 -->
+                    <div class="flex flex-col items-center text-center group">
+                        <div class="relative w-48 h-48 mb-6">
+                            <div class="absolute inset-0 rounded-full border-2 border-saffron-200 transform rotate-45 group-hover:rotate-90 transition-transform duration-700"></div>
+                            <img src="https://picsum.photos/300/300?random=6" alt="Rajesh Verma" class="w-full h-full object-cover rounded-full border-4 border-white shadow-lg group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <h3 class="font-subheading text-2xl text-stone-800 mb-1">Rajesh Verma</h3>
+                        <p class="font-body text-sm font-bold text-saffron-600 uppercase tracking-wider mb-3">Flute & Percussion</p>
+                        <p class="font-body text-stone-500 text-sm italic opacity-80">Adding the breath of divinity with soothing flute melodies.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Events Section -->
+        <section id="events" class="py-24 bg-stone-50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center mb-16">
+                    <h2 class="font-heading text-4xl md:text-5xl text-maroon-600 mb-4">Upcoming Events</h2>
+                    <p class="font-subheading text-xl text-stone-500 italic">Join us in devotion</p>
+                </div>
+
+                <div class="grid gap-8 max-w-5xl mx-auto">
+                    <!-- Event 1 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 border border-stone-100 flex flex-col md:flex-row">
+                        <div class="bg-maroon-600 text-white p-6 flex flex-col items-center justify-center min-w-[140px] md:border-r border-maroon-700">
+                            <span class="font-heading text-4xl font-bold">28</span> 
+                            <span class="font-body uppercase tracking-widest text-sm opacity-90">October</span>
+                            <span class="font-body text-xs opacity-75 mt-2">Saturday</span>
+                        </div>
+                        <div class="p-6 md:p-8 flex-1">
+                            <h3 class="font-subheading text-2xl text-stone-800 mb-3">Ekadashi Bhajan Sandhya</h3>
+                            <div class="flex flex-col sm:flex-row gap-4 text-stone-500 text-sm mb-4 font-body">
+                                <div class="flex items-center gap-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-saffron-500"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                    <span>6:00 PM - 8:30 PM</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-saffron-500"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                    <span>Sri Mandir, Auburn, Sydney</span>
+                                </div>
+                            </div>
+                            <p class="text-stone-600 mb-6 font-body leading-relaxed">
+                                Join us for a mesmerizing evening of Vitthal Bhajans and spiritual discourse.
+                            </p>
+                        </div>
+                        <div class="hidden md:block w-48 relative">
+                             <img src="https://picsum.photos/600/400?random=10" alt="Event Image" class="absolute inset-0 w-full h-full object-cover">
+                             <div class="absolute inset-0 bg-gradient-to-l from-transparent to-black/10"></div>
+                        </div>
+                    </div>
+
+                    <!-- Event 2 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 border border-stone-100 flex flex-col md:flex-row">
+                        <div class="bg-maroon-600 text-white p-6 flex flex-col items-center justify-center min-w-[140px] md:border-r border-maroon-700">
+                            <span class="font-heading text-4xl font-bold">12</span> 
+                            <span class="font-body uppercase tracking-widest text-sm opacity-90">November</span>
+                            <span class="font-body text-xs opacity-75 mt-2">Sunday</span>
+                        </div>
+                        <div class="p-6 md:p-8 flex-1">
+                            <h3 class="font-subheading text-2xl text-stone-800 mb-3">Diwali Cultural Celebration</h3>
+                            <div class="flex flex-col sm:flex-row gap-4 text-stone-500 text-sm mb-4 font-body">
+                                <div class="flex items-center gap-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-saffron-500"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                    <span>5:00 PM Onwards</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-saffron-500"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                    <span>Parramatta Park, Sydney</span>
+                                </div>
+                            </div>
+                            <p class="text-stone-600 mb-6 font-body leading-relaxed">
+                                Celebrating the festival of lights with devotion, music, and community.
+                            </p>
+                        </div>
+                        <div class="hidden md:block w-48 relative">
+                             <img src="https://picsum.photos/600/400?random=11" alt="Event Image" class="absolute inset-0 w-full h-full object-cover">
+                             <div class="absolute inset-0 bg-gradient-to-l from-transparent to-black/10"></div>
+                        </div>
+                    </div>
+
+                    <!-- Event 3 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 border border-stone-100 flex flex-col md:flex-row">
+                        <div class="bg-maroon-600 text-white p-6 flex flex-col items-center justify-center min-w-[140px] md:border-r border-maroon-700">
+                            <span class="font-heading text-4xl font-bold">03</span> 
+                            <span class="font-body uppercase tracking-widest text-sm opacity-90">December</span>
+                            <span class="font-body text-xs opacity-75 mt-2">Sunday</span>
+                        </div>
+                        <div class="p-6 md:p-8 flex-1">
+                            <h3 class="font-subheading text-2xl text-stone-800 mb-3">Monthly Community Satsang</h3>
+                            <div class="flex flex-col sm:flex-row gap-4 text-stone-500 text-sm mb-4 font-body">
+                                <div class="flex items-center gap-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-saffron-500"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                    <span>4:00 PM - 6:00 PM</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-saffron-500"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                    <span>Wentworthville Community Centre</span>
+                                </div>
+                            </div>
+                            <p class="text-stone-600 mb-6 font-body leading-relaxed">
+                                An open gathering for all to sing, listen, and find inner peace.
+                            </p>
+                        </div>
+                        <div class="hidden md:block w-48 relative">
+                             <img src="https://picsum.photos/600/400?random=12" alt="Event Image" class="absolute inset-0 w-full h-full object-cover">
+                             <div class="absolute inset-0 bg-gradient-to-l from-transparent to-black/10"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-24 bg-maroon-600 text-white relative overflow-hidden">
+            <!-- Texture overlay -->
+            <div class="absolute inset-0 opacity-5 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+      
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+              <div class="max-w-4xl mx-auto text-center">
+                <h2 class="font-heading text-4xl md:text-5xl mb-8 text-saffron-100">Contact Us</h2>
+                <p class="font-subheading text-xl md:text-2xl text-maroon-100 mb-12">
+                  Inviting peace and devotion to your home and community.
+                </p>
+      
+                <div class="grid md:grid-cols-1 gap-8 mb-16 justify-items-center">
+                  <a href="mailto:contact@nadabramha.sydney" class="flex flex-col items-center group p-8 bg-maroon-700/50 rounded-2xl border border-maroon-500 hover:border-saffron-300 transition-all duration-300 w-full max-w-md">
+                    <div class="w-16 h-16 bg-maroon-800 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-saffron-300"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    </div>
+                    <h3 class="font-body text-lg font-bold mb-2">Email Us</h3>
+                    <span class="font-body text-maroon-100 group-hover:text-white transition-colors">contact@nadabramha.sydney</span>
+                    <span class="mt-4 text-xs uppercase tracking-widest text-maroon-300 border border-maroon-500 px-3 py-1 rounded-full group-hover:bg-saffron-500 group-hover:text-maroon-900 group-hover:border-transparent transition-all">
+                      Send Inquiry
+                    </span>
+                  </a>
+                </div>
+      
+                <div class="flex justify-center gap-8">
+                   <a href="#" class="text-maroon-200 hover:text-saffron-300 transition-colors">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                   </a>
+                   <a href="#" class="text-maroon-200 hover:text-saffron-300 transition-colors">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                   </a>
+                </div>
+                
+              </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-stone-900 text-stone-400 py-12 border-t border-stone-800">
+        <div class="container mx-auto px-4 text-center">
+            <h4 class="font-heading text-2xl text-stone-200 mb-4">Nada Bramha</h4>
+            <p class="font-body text-sm mb-8 max-w-md mx-auto">
+                Spreading the divine message of love and peace through traditional Indian classical and semi-classical music.
+            </p>
+            <div class="h-px w-12 bg-stone-700 mx-auto mb-8"></div>
+            <p class="font-body text-xs text-stone-600">
+                &copy; <span id="year"></span> Nada Bramha. All rights reserved. <br/>
+                Designed with devotion.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Main JS Logic -->
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
